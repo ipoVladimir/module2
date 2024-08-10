@@ -35,17 +35,15 @@ not_primes = []
 
 for num in numbers:
     is_prime = True
-    if num > 2:
+    if num != 1:
         for i in range(2, num):
             if num % i == 0:
                 is_prime = False
                 break
-    elif num == 1:
-        continue
-    if is_prime:
-        primes.append(num)
-    else:
-        not_primes.append(num)
+        if is_prime:
+            primes.append(num)
+        else:
+            not_primes.append(num)
 
 print(f"Primes: {primes}")
 print(f"Not Primes: {not_primes}")
